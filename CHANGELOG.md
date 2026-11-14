@@ -11,6 +11,24 @@ Function:
 
 ### Good
 
+- (none)
+
+### Bad
+
+- (none)
+
+### Ugly
+
+- (none)
+
+## [v1.0.0] — 2026-11-14 — FROZEN
+
+### Good
+
+- Frozen at 1.0.0 on James's sign-off ("yes freeze 16 and 17"). Tests
+  13/13 on the laptop; run on the S24 by James ("tested on y phone ok").
+- `sc/p17-mediator-v1.sc.json` sealed by James on the laptop (P3 Freeze v2, document_sha256
+  df00ef972592c5a3…); verified under P3 against its key_id before commit.
 - `mediator.py`, `SPEC.md` 1.0.0, `test_mediator.py` (13 tests, run
   red first): the foundation's Master Mediator as primitive layer P17.
   Discovery (read-only), classification (five tiers, never across
@@ -29,6 +47,9 @@ Function:
 
 ### Bad
 
+- The capsule test pinned `"signature": null`, so sealing the capsule
+  made it fail. It now requires the seal: P3 must accept the capsule
+  under its own key_id (P1 `did_key_decode`), and a changed capsule fails.
 - No consumer in this workspace exports a digest yet, so `scan` here
   finds nothing. Producing digests (the Cockpit, the Legacy, the
   Weaver, SCP Substrate) is the next step (NOTES Q2).

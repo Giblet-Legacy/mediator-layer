@@ -10,6 +10,9 @@ Function:
 
 - **Q1 — Sign off P17 at 1.0.0?** Built and green on the laptop
   (13/13). Not yet run on the S24. Raised 2026-11-14. Owner: James.
+  **Resolved 2026-11-14 — James: "tested on y phone ok", then "yes freeze 16 and 17".**
+  Frozen at 1.0.0. Ran on the S24 before sealing; after sealing the capsule
+  test was changed to require the seal (13/13 on the laptop).
 - **Q2 — Which consumers here export digests, and what do they
   report?** None do yet. Candidates: the Cockpit (claims by subject and
   face: usage_digest), the ledger (event kinds: chronoscribe_digest),
