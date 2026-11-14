@@ -19,5 +19,10 @@
     ]
   },
   "licence": "MSL-1.0",
-  "signature": null
+  "document_sha256": "df00ef972592c5a3214de24db627941e312fa4f31e39c0658e2b9c78f8de2d30",
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "did:key:z6MkkVnQM4mpSND1jMBLDScpuUFF9BJTMoxYykurXQY89pjn",
+    "value": "e1e800bbf69331e8fa9e4cc08dc645fc66d6fddbd88d339f5e3717115d2017fd6dc0cd2bbc3b52dd7eea0777d4343a6974446d7622bff0a5318d18e0e8a46e0d"
+  }
 }
