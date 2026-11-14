@@ -1,0 +1,7 @@
+# requirements.txt — P17 Mediator (mediator-layer)
+# Function: runtime dependencies for P17. mediator.py is standard
+# library only plus P16 Time (sibling checkout ../forge-time). The
+# capsule test seals with ../forge-time/seal_capsule.py (P3, P7), which
+# needs:
+
+cryptography

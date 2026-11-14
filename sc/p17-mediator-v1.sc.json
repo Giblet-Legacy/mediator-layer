@@ -1,0 +1,23 @@
+{
+  "scp_id": "forge-stack/primitive/p17-mediator-v1",
+  "scp_version": "1.2.0",
+  "created": "2026-11-14T18:30:00Z",
+  "inherits": "forge-stack/governance-v6",
+  "declaration": {
+    "type": "primitive_layer",
+    "layer": "P17",
+    "name": "Mediator",
+    "repo": "Giblet-Legacy/mediator-layer",
+    "module": "mediator.py",
+    "spec": "SPEC.md",
+    "spec_version": "1.0.0",
+    "spec_sha256": "9040127f8b8ad1001ec6197b4d337ee4f9e28aa27d3c81e9bee17dff877b64ce",
+    "intent": "Read consumer digests, classify each field's maturity (Hypothesis to Fact), and write unsigned spine-update proposals for Fact fields; never sign, merge or edit a layer.",
+    "derived_from": "JamesTheGiblet/the-full-stack master_mediator/ (with hardening 6.1 M1-M3)",
+    "depends": [
+      "forge-stack/primitive/p16-time-v1"
+    ]
+  },
+  "licence": "MSL-1.0",
+  "signature": null
+}
