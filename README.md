@@ -16,17 +16,17 @@ Depends:  P16 Time (../forge-time)
 Consumed: The owner through HAL; The Legacy (later)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
-Status:   1.0.0 — frozen 2026-11-14 (SPEC.md 1.0.0), signed off by James
+Status:   1.1.0 — frozen 2026-11-18 (SPEC_V1_1.md, mediator_v1_1.py); 1.0.0 frozen 2026-11-14 (SPEC.md), signed off by James
 
 ## Use
 
-Since 1.1.0 (2026-11-18, SPEC_V2.md) use `mediator_v2.py`. the-full-stack
-is reference only, so v2 never reads it, has no `--foundation`, and a
+Since 1.1.0 (2026-11-18, SPEC_V1_1.md) use `mediator_v1_1.py`. the-full-stack
+is reference only, so mediator_v1_1 never reads it, has no `--foundation`, and a
 proposal's `inherits` is the `--inherits` you give, or `null`:
 
-    python mediator_v2.py scan                               # this workspace, skipping the-full-stack
-    python mediator_v2.py scan --propose --out proposals     # inherits null
-    python mediator_v2.py scan --propose --out proposals --inherits <ratified scp_id>
+    python mediator_v1_1.py scan                               # this workspace, skipping the-full-stack
+    python mediator_v1_1.py scan --propose --out proposals     # inherits null
+    python mediator_v1_1.py scan --propose --out proposals --inherits <ratified scp_id>
 
 The frozen 1.0.0 `mediator.py` (history; its `--foundation` defaults to
 ../the-full-stack):

@@ -1,10 +1,10 @@
 """
-mediator_v2.py — P17 Mediator v2: mediator.py without the-full-stack
+mediator_v1_1.py — P17 Mediator 1.1.0: mediator.py without the-full-stack
 
 Function:
-    Implements SPEC_V2.md over the frozen mediator.py (SPEC 1.0.0).
+    Implements SPEC_V1_1.md over the frozen mediator.py (SPEC 1.0.0).
     James, 2026-11-18: the-full-stack was for reference only and never a
-    layer of the Legacy. So v2 has no --foundation, reads no governance
+    layer of the Legacy. So 1.1.0 has no --foundation, reads no governance
     from it, lets a proposal's inherits be given or null, and never
     discovers digests inside a the-full-stack folder. Classification
     and everything else is v1's own code, re-exported unchanged. It
@@ -21,7 +21,7 @@ Public API:
 
 Layer:    P17 — Mediator
 Depends:  mediator.py 1.0.0, P16 Time (forge_time)
-Spec:     SPEC_V2.md
+Spec:     SPEC_V1_1.md
 Version:  1.1.0
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
@@ -41,7 +41,7 @@ from mediator import (  # noqa: F401  (re-exported unchanged)
 )
 import forge_time
 
-_EXCLUDED = "the-full-stack"  # reference only (SPEC_V2 §1): never read as a consumer
+_EXCLUDED = "the-full-stack"  # reference only (SPEC_V1_1 §1): never read as a consumer
 
 
 def _excluded(root, path):
@@ -54,7 +54,7 @@ def _excluded(root, path):
 
 # ---------------------------------------------------------------------------
 # 1. find_digest_paths
-#    SPEC_V2 §2: v1's, minus anything under root/the-full-stack.
+#    SPEC_V1_1 §2: v1's, minus anything under root/the-full-stack.
 # ---------------------------------------------------------------------------
 def find_digest_paths(root, pattern=DEFAULT_PATTERN):
     return [p for p in _v1.find_digest_paths(root, pattern) if not _excluded(root, p)]
@@ -75,7 +75,7 @@ def load_digests(root, pattern=DEFAULT_PATTERN):
 
 # ---------------------------------------------------------------------------
 # 3. build_proposal
-#    SPEC_V2 §2: inherits optional; given means ratified (M2); absent means null.
+#    SPEC_V1_1 §2: inherits optional; given means ratified (M2); absent means null.
 # ---------------------------------------------------------------------------
 def build_proposal(finding, inherits=None, created=None):
     if inherits is not None:
@@ -87,7 +87,7 @@ def build_proposal(finding, inherits=None, created=None):
 
 # ---------------------------------------------------------------------------
 # 4. export_proposal
-#    The same atomic LF write as v1, with the v2 builder (v1 is never patched).
+#    The same atomic LF write as v1, with the 1.1.0 builder (v1 is never patched).
 # ---------------------------------------------------------------------------
 def export_proposal(finding, out_dir, inherits=None):
     capsule = build_proposal(finding, inherits)
@@ -109,11 +109,11 @@ def export_proposal(finding, out_dir, inherits=None):
 
 # ---------------------------------------------------------------------------
 # 5. main
-#    SPEC_V2 §2: no --foundation, no default governance.
+#    SPEC_V1_1 §2: no --foundation, no default governance.
 # ---------------------------------------------------------------------------
 def main(argv=None):
     workspace = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    p = argparse.ArgumentParser(prog="mediator_v2.py", description="P17 Mediator v2: field maturity and spine proposals.")
+    p = argparse.ArgumentParser(prog="mediator_v1_1.py", description="P17 Mediator 1.1.0: field maturity and spine proposals.")
     sp = p.add_subparsers(dest="cmd", required=True)
     s = sp.add_parser("scan", help="discover digests, classify, report")
     s.add_argument("--root", default=workspace)

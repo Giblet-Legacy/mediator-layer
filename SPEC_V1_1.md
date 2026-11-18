@@ -1,16 +1,16 @@
-# SPEC V2 — mediator-layer (P17 Mediator), changes over SPEC 1.0.0
+# SPEC V1.1 — mediator-layer (P17 Mediator), changes over SPEC 1.0.0
 
-SPEC_V2.md — what mediator_v2.py changes over the signed SPEC 1.0.0 and the frozen mediator.py.
+SPEC_V1_1.md — what mediator_v1_1.py changes over the signed SPEC 1.0.0 and the frozen mediator.py.
 
 Function:
     SPEC.md (1.0.0) is pinned by sha256 in the sealed
     sc/p17-mediator-v1.sc.json and is never edited, and mediator.py is
-    frozen. This file states only what v2 changes. Where it is silent,
+    frozen. This file states only what 1.1.0 changes. Where it is silent,
     SPEC.md 1.0.0 applies unchanged.
 
 Layer:    P17 — Mediator
 Depends:  SPEC.md 1.0.0, mediator.py 1.0.0, P16 Time
-Version:  SPEC 2.0.0 (layer 1.1.0)
+Version:  SPEC V1.1 1.1.0
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
 
@@ -25,7 +25,7 @@ the-full-stack's `sc/` and made an agreement test against its
 `master_mediator` mandatory. Both go. The Master Mediator is where P17's
 idea came from, not something P17 answers to.
 
-## 2. mediator_v2.py
+## 2. mediator_v1_1.py
 
 A layer over mediator.py. It imports mediator.py and changes four
 things:
@@ -38,13 +38,13 @@ things:
   (M2). If it is not given, it is `null`: no governance from the-full-stack
   stands over a proposal. Everything else is v1's output, byte for byte.
 - **`export_proposal(finding, out_dir, inherits=None)`**: v1's atomic
-  LF write, using the v2 builder.
-- **Command:** `python mediator_v2.py scan [--root DIR] [--pattern P]
+  LF write, using the 1.1.0 builder.
+- **Command:** `python mediator_v1_1.py scan [--root DIR] [--pattern P]
   [--propose --out DIR [--inherits ID]]`. There is no `--foundation`,
   and no default governance. `--propose` without `--out` and a
   non-ratified `--inherits` both exit 2 and write nothing.
 
-`current_governance` is not part of v2. It stays in mediator.py as
+`current_governance` is not part of mediator_v1_1. It stays in mediator.py as
 frozen history.
 
 Unchanged and re-exported: `extract_observations`, `classify`, the
@@ -53,24 +53,24 @@ tiers, `FieldObservation`, `MaturityFinding`, `DIGEST_SPECS`,
 
 ## 3. Tests
 
-- `test_mediator_v1_1.py`: the 1.0.0 suite for mediator.py, with test 12
+- `test_mediator_at_v1_1.py`: the 1.0.0 suite for mediator.py, with test 12
   (agreement with the-full-stack) replaced by
   `test_never_reaches_the_full_stack`. The 1.0.0 file is kept
   byte-identical in `archive/1.0.0/`.
-- `test_mediator_v2.py`: discovery skips the-full-stack; inherits given
+- `test_mediator_v1_1.py`: discovery skips the-full-stack; inherits given
   or null; export defaults to null; the command without `--foundation`;
   and the shared parts are v1's own objects.
 
 ## 4. Capsule
 
 `sc/p17-mediator-v1.sc.json` stays as sealed (its `inherits` of
-forge-stack governance is history). A v2 capsule naming this file is
-for James to seal when he freezes 1.1.0.
+forge-stack governance is history). The 1.1.0 capsule, `sc/p17-mediator-v2.sc.json`
+(SCP's own id counter), pins this file and SPEC.md; James seals it.
 
 ---
 
 ## Document control
 
-- **SPEC 2.0.0** — 2026-11-18, by the VS Code AI on James's word ("yes
-  in the order you stated", removing the the-full-stack ties). Not
-  signed. Layer 1.1.0 is not frozen.
+- **SPEC V1.1 1.1.0** — 2026-11-18, by the VS Code AI on James's word ("yes
+  in the order you stated", removing the the-full-stack ties).
+  Frozen 2026-11-18 (James: "freeze"); pinned by sc/p17-mediator-v2.sc.json.

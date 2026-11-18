@@ -9,7 +9,7 @@ Function:
 
 ## The Immutable Rule
 Never rewrite a primitive. Add a layer. Once mediator.py is frozen, a
-change is a mediator_v2.py over it, after a SPEC_V2.md describes it.
+change is a mediator_v1_1.py over it, after a SPEC_V1_1.md describes it.
 
 ## Propose, never decide
 P17 reads and proposes. It never signs, never merges, never edits a
@@ -28,8 +28,8 @@ function has a numbered header (e.g. `# 4. classify`).
 ## P17 Architecture Specifics
 - Depends on P16 Time (`forge_time`) for timestamps and the scp_id rule.
 - the-full-stack (JamesTheGiblet) is reference only, never a layer or
-  a dependency (James, 2026-11-18; SPEC_V2.md). P17's idea came from
+  a dependency (James, 2026-11-18; SPEC_V1_1.md). P17's idea came from
   its master_mediator. Never import it, test against it, read its
-  governance or treat it as authority. Use mediator_v2.py.
+  governance or treat it as authority. Use mediator_v1_1.py.
 - `inherits` is never hardcoded: it is the `--inherits` given, or null.
 - The AI never seals the capsule; the owner does.
