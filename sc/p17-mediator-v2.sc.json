@@ -22,6 +22,10 @@
     "supersedes": "forge-stack/primitive/p17-mediator-v1"
   },
   "licence": "MSL-1.0",
-  "document_sha256": null,
-  "signature": null
+  "document_sha256": "204d0a596f9ad9d1ea10b656ac581393330c0f911153369e8fe38952ca534701",
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "did:key:z6MkkVnQM4mpSND1jMBLDScpuUFF9BJTMoxYykurXQY89pjn",
+    "value": "89cda681ee0404ada7ccc1ccaaec7ac45ebf096ce75278b44a0ccff308afc649b9ad1c96c64ff0b2dd8659aefa0134d5386d613f82e27b702f79e5e07ded3b0c"
+  }
 }
