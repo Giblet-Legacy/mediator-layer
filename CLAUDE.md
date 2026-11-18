@@ -27,9 +27,9 @@ function has a numbered header (e.g. `# 4. classify`).
 
 ## P17 Architecture Specifics
 - Depends on P16 Time (`forge_time`) for timestamps and the scp_id rule.
-- From the foundation's master_mediator (JamesTheGiblet/the-full-stack),
-  with hardening 6.1 M1–M3 built in. Keep the two in agreement: the
-  agreement test runs P17 and the foundation on the same real digests.
-- `inherits` is never hardcoded: given, or read from the foundation's
-  sc/ (the governance nothing supersedes).
+- the-full-stack (JamesTheGiblet) is reference only, never a layer or
+  a dependency (James, 2026-11-18; SPEC_V2.md). P17's idea came from
+  its master_mediator. Never import it, test against it, read its
+  governance or treat it as authority. Use mediator_v2.py.
+- `inherits` is never hardcoded: it is the `--inherits` given, or null.
 - The AI never seals the capsule; the owner does.

@@ -1,5 +1,6 @@
 # VERSION — P17 Mediator (mediator-layer)
 # Function: the current release version of this layer. Advances only on freeze.
 # 0.0.0-dev means the repo is in build and has not yet been signed off at v1.
+# 1.1.0 — built 2026-11-18, not frozen: mediator_v2.py (SPEC_V2.md), no the-full-stack; 18/18.
 
 1.0.0

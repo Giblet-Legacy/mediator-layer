@@ -20,6 +20,17 @@ Status:   1.0.0 — frozen 2026-11-14 (SPEC.md 1.0.0), signed off by James
 
 ## Use
 
+Since 1.1.0 (2026-11-18, SPEC_V2.md) use `mediator_v2.py`. the-full-stack
+is reference only, so v2 never reads it, has no `--foundation`, and a
+proposal's `inherits` is the `--inherits` you give, or `null`:
+
+    python mediator_v2.py scan                               # this workspace, skipping the-full-stack
+    python mediator_v2.py scan --propose --out proposals     # inherits null
+    python mediator_v2.py scan --propose --out proposals --inherits <ratified scp_id>
+
+The frozen 1.0.0 `mediator.py` (history; its `--foundation` defaults to
+../the-full-stack):
+
     python mediator.py scan                                  # this workspace: */sc/*.sc.json
     python mediator.py scan --root ../the-full-stack --pattern "consumer/**/sc/*.sc.json"
     python mediator.py scan --propose --out proposals        # inherits read from ../the-full-stack
@@ -54,7 +65,6 @@ the same key as the Legacy ledger). A later capsule is sealed the same way. To s
     python -m pytest -q
 
 Needs ../forge-time and, for the capsule test, ../envelope-layer,
-../sign-layer, ../freeze-layer and ../record-layer. If
-../the-full-stack is checked out (with its ccemk2 and keystone_gate
-submodules), P17 is also checked against the foundation's
-master_mediator on its real digests.
+../sign-layer, ../freeze-layer and ../record-layer. Since 1.1.0 nothing
+is checked against the-full-stack's master_mediator; the 1.0.0 suite
+that did is kept byte-identical in archive/1.0.0/.
